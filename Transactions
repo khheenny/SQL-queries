@@ -1,0 +1,31 @@
+CREATE DATABASE Transactions;
+CREATE TABLE Transactions(
+order_id int(255) not null, 
+ordered_at varchar(255) not null, 
+shipped_at varchar(255) not null, 
+order_amount varchar(255) not null, 
+customer_id varchar(255) not null,
+primary key(order_id)
+);
+INSERT INTO Transactions (order_id ,ordered_at ,shipped_at ,order_amount ,customer_id) VALUES ('AJ202001','2020-07-02T10:48:00','DATEADD(DAY,5,GETDATE())','4315','CA01'), ('AJ202004','2020-07-02T10:48:00','DATEADD(DAY,4,GETDATE())', '5460','CA06'), ('AJ202003','2020-06-30T06:28:00','DATEADD(DAY,1,GETDATE())', '1462','CA05'), ('AJ202005','2020-07-01T06:18:00','DATEADD(DAY,2,GETDATE())', '15646','CA032'), ('AJ202002','2020-07-01T05:10:00','DATEADD(DAY,3,GETDATE())', '1978','CA07');
+SELECT order_id, ordered_at 
+FROM Transactions 
+ORDER BY ordered_at;
+SELECT order_id, 
+order_amount, 
+ordered_at 
+FROM Transactions 
+ORDER BY ordered_at DESC;
+SELECT order_id, 
+order_amount, 
+ordered_at, 
+shipped_at 
+FROM Transactions 
+ORDER BY ordered_at DESC, shipped_at ASC;
+SELECT CURRENT_TIMESTAMP;
+INSERT INTO Transactions (order_id ,ordered_at ,shipped_at ,order_amount ,customer_id) 
+VALUES ('AJ202001','2020-07-02T10:48:00','DATEADD(DAY,5,GETDATE())','4315','CA01'), 
+('AJ202004','2020-07-02T10:48:00','DATEADD(DAY,4,GETDATE())', '5460','CA06'), 
+('AJ202003','2020-06-30T06:28:00','DATEADD(DAY,1,GETDATE())', '1462','CA05'), 
+('AJ202005','2020-07-01T06:18:00','DATEADD(DAY,2,GETDATE())', '15646','CA032'), 
+('AJ202002','2020-07-01T05:10:00','DATEADD(DAY,3,GETDATE())', '1978','CA07');
