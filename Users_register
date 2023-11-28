@@ -1,1 +1,29 @@
-
+CREATE DATABASE users_register;
+CREATE TABLE users_register(
+user_id int(20) not null,
+full_name varchar(200) not null,
+subject varchar(200) not null,
+present varchar(200) not null,
+absent varchar(200) not null
+);
+select * from users_register;
+insert into users_register(user_id, full_name, subject, present, absent)
+values ("1", "ayotomide adeniyi", "quantitative", "21", "10"),
+("2", "olaniyi adigun", "verbal", "12", "16"),
+("3", "Collins adeola", "english", "13", "18"),
+("4", "amaka grace", "verbal", "21", "14"),
+("5", "ololade itunnu", "English", "16", "15"),
+("6", "emeka glory", "quantitative", "20", "11"),
+("7", "itunnu oluwa", "English", "15", "14"),
+("8", "Angela victory", "quantitative", "14", "20"),
+("9", "anuoluwa grace", "verbal", "20", "19"),
+("10", "anjorin tife", "English", "15", "16");
+select * from users_register;
+select sum(21 * 10);
+select sum(12 * 16);
+select avg(21 * 10);
+select avg(12 * 16);
+select min(21 , 10);
+select min(12 , 16);
+select max(21 , 10);
+select max(12 , 16);
